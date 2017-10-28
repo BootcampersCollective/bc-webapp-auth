@@ -8,9 +8,8 @@ passport.use(new GitHubStrategy ({
   callbackURL: "http://localhost:3030/auth/github/callback"
 },
   (accessToken, refreshToken, profile, done) => {
-    if(err) {
-      return done(null, user)
-    }
+    console.log('access token', accessToken)
+    return done(null, accessToken);
   }
 ));
 

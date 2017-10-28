@@ -7,7 +7,7 @@ router.get('/github', passportGithub.authenticate('github', { scope: [ 'user:ema
 router.get('/github/callback',
   passportGithub.authenticate('github', { failureRedirect: '/login' }),
   (req, res) => {
-    console.log(req.user)
+    console.log('user', req.user)
   }
 )
 
