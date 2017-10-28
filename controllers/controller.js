@@ -1,1 +1,5 @@
-//controllers
+var api = {
+    authenticate: function () {
+
+    }
+};
