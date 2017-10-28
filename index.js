@@ -1,6 +1,8 @@
+require('dotenv').config();
 let express = require('express');
 let router = require('./routes/routes');
 let morgan = require('morgan');
+const passport = require('passport');
 let cookieParser = require('cookie-parser');
 let bodyParser = require('body-parser');
 let path = require('path');
@@ -17,3 +19,13 @@ app.use(router);
 app.listen(PORT, function () {
     console.log('Example app listening on port ' + PORT + '!');
 });
+
+const app = express();
+
+const routes = require('./routes/routes');
+
+app.use(passport.initialize());
+
+app.use('/auth/', routes);
+
+app.listen(3030);
