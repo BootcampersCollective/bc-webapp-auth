@@ -29,14 +29,13 @@ router.get('/auth/linkedin/callback', function (req, res) {
 
 router.post('/api/v1/auth', auth);
 
-module.exports = router;
-router.get('/github', passportGithub.authenticate('github', { scope: [ 'user:email' ]}))
+router.get('/github', passportGithub.authenticate('github', { scope: [ 'user:email' ]}));
 
 router.get('/github/callback',
-  passportGithub.authenticate('github', { failureRedirect: '/login' }),
-  (req, res) => {
-    console.log('user', req.user)
-  }
-)
+	passportGithub.authenticate('github', { failureRedirect: '/login' }),
+	(req, res) => {
+		console.log('user', req.user)
+	}
+);
 
 module.exports = router;
