@@ -58,6 +58,3 @@ typings/
 .env
 
 .idea
-
-# config/auth.js
-/config/auth.js
