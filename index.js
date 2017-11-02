@@ -21,8 +21,8 @@ passport.serializeUser(function(user, done) {
 });
 
 passport.use(new FacebookStrategy({
-    clientID: '962423027276365',
-    clientSecret: '65f98dba76f9cd23d1afea8f61e94b87',
+    clientID: //client ID needs updated,
+    clientSecret: //client secret needs updated,
     callbackURL: "http://localhost:3000/auth/facebook/callback"
   },
   function(accessToken, refreshToken, profile, done) {
