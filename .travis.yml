@@ -1,0 +1,20 @@
+sudo: required
+
+language: javascript
+
+services:
+  - docker
+
+before_install:
+  - docker build -t bootcamperscollective/bc-webapp-auth .
+  - docker run -d bootcamperscollective/bc-webapp-auth /bin/sh -c "cd /root/bc-webapp-auth; npm start;"
+  - docker ps -a
+
+script:
+  - npm test
+
+after_success:
+  - if [ "$TRAVIS_BRANCH" == "master" ]; then
+    docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD";
+    docker push bootcamperscollective/bc-webapp-auth;
+    fi
