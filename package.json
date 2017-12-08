@@ -37,5 +37,6 @@
     "passport-google-oauth": "^1.0.0",
     "passport-linkedin": "^1.0.0",
     "passport-oauth": "^1.0.0"
+    "dotenv": "^4.0.0",
   }
 }
